@@ -1,0 +1,236 @@
+/* Background gradient with subtle animation */
+.weather-container {
+  max-width: 460px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+  box-shadow: 0 10px 30px rgba(102, 166, 255, 0.5);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  text-align: center;
+  user-select: none;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 900;
+  margin-bottom: 25px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.input-section {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.input {
+  flex: 1;
+  padding: 12px 18px;
+  border-radius: 15px;
+  border: none;
+  font-size: 1.2rem;
+  outline: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+.input:focus {
+  box-shadow: 0 0 15px #66a6ff;
+}
+
+.button {
+  padding: 12px 22px;
+  border-radius: 15px;
+  background: #fff;
+  color: #0077ff;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,119,255,0.5);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+  background: #0077ff;
+  color: #fff;
+}
+
+.loader-container {
+  margin: 20px 0;
+}
+
+.loader {
+  border: 6px solid rgba(255, 255, 255, 0.3);
+  border-top: 6px solid #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  color: #ff5757;
+  font-weight: 600;
+  margin-top: 15px;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  user-select: none;
+}
+
+.weather-info h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+}
+
+.weather-icon {
+  width: 150px;
+  height: 150px;
+  margin: 10px 0;
+}
+
+.weather-main {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 5px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.temp {
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 5px 0 10px 0;
+}
+
+.forecast {
+  margin-top: 20px;
+}
+
+.forecast h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+}
+
+.forecast-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.forecast-card {
+  flex: 0 0 75px;
+  padding: 15px 10px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(102, 166, 255, 0.3);
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+.forecast-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(102, 166, 255, 0.6);
+}
+
+.date {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.forecast-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 5px;
+}
+
+.forecast-main {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.forecast-temp {
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
+
+/* Default: Portrait on mobile — stacked vertically */
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+  margin: 40px auto;
+  padding: 20px 25px;
+}
+
+/* On larger screens — landscape layout */
+@media (min-width: 768px) {
+  .weather-container {
+    flex-direction: row;       /* side by side */
+    max-width: 900px;
+    gap: 40px;
+  }
+
+  /* Current weather and forecast side by side */
+  .current-weather,
+  .forecast {
+    flex: 1;                  /* take equal width */
+  }
+}
+.weather-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column; /* stack everything vertically by default */
+}
+
+.input-section {
+  width: 100%;
+  margin-bottom: 30px; /* space below search */
+}
+
+.weather-data {
+  display: flex;
+  flex-direction: column; /* stacked vertically on small screens */
+  gap: 20px;
+}
+
+/* On wider screens, layout current weather and forecast side by side */
+@media (min-width: 768px) {
+  .weather-data {
+    flex-direction: row;
+    gap: 40px;
+  }
+  
+  .current-weather, .forecast {
+    flex: 1; /* share space equally */
+  }
+}
