@@ -157,21 +157,40 @@ body {
 }
 
 .forecast-card {
-  flex: 0 0 75px;
-  padding: 15px 10px;
-  border-radius: 20px;
-  background: white;
-  color: #555;
+  flex: 0 0 110px;
+  padding: 15px 12px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+  backdrop-filter: blur(8px);
+  color: #fff;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(102, 166, 255, 0.3);
-  transition: transform 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   cursor: default;
 }
 
 .forecast-card:hover {
   transform: scale(1.1);
-  box-shadow: 0 8px 20px rgba(102, 166, 255, 0.6);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
 }
+
+.forecast-card:nth-child(1) {
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+}
+.forecast-card:nth-child(2) {
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+}
+.forecast-card:nth-child(3) {
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+}
+.forecast-card:nth-child(4) {
+  background: linear-gradient(135deg, #c2e9fb, #a1c4fd);
+}
+.forecast-card:nth-child(5) {
+  background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+}
+
 
 .date {
   font-size: 0.85rem;
